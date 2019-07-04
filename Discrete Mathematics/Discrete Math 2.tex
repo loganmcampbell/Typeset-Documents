@@ -1,0 +1,140 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{CSCE 4133}
+\newcommand\hwnumber{}                  % <-- homework number
+\newcommand\NetIDa{Logan Campbell}           % <-- NetID of person #1
+\newcommand\NetIDb{010 - 641 - 227}           % <-- NetID of person #2 (Comment this line out for problem sets)
+
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+
+{
+
+\begin{enumerate}
+    \item[\#1.] Write P(n,r) and C(n,r) as fractions of factorial expressions ($0 \leq r \leq n$)
+    
+    \vspace{1em}
+    A. $P(n,r)$ = 
+    \vspace{2em}
+    
+    B. $C(n,r)$ =
+    \vspace{4em}
+    
+    \item[\#2.] How many \textit{eight-bit} strings are there? (An eight bit string is a sequences of 0's and 1's, they are eight terms long).
+    \vspace{4em}
+    
+    \item[\#3.] How many eight-bit strings are there that have exactly three 0's?
+    \vspace{4em}
+    
+    \item[\#4.] From a group of twelve women and ten men:
+    \vspace{2em}
+    
+    a. In how many ways can we form a baseball team of nine people? no arrangements.
+    \vspace{3em}
+    
+    b. In how many ways can we form a baseball team of nine people that has at least two women on it? no arrangements.
+    \vspace{3em}
+    
+    \item[\#4.] In how many ways can we arrange the letters:$$ A B C D E F G $$
+    
+    a. Where each arrangement contains the sub-string $AC$ and the sub-string $EG$ and $AC$ appears before $EG$?
+    \vspace{3em}
+    
+    b. Where each arrangement contains the sub-string $ABC$, but none contains the sub-string $CG$?
+    \vspace{4em}
+    
+    \item[\#5.] There are five chairs in a row and five students to be seated. Mary, Dave, Alice, Sue, and John. If Dave and John insist on sitting apart, then in how many ways can these five people be seated?
+    
+    \vspace{4em}
+
+\end{enumerate}
+}
+
+
+\newpage{}
+{
+
+\begin{enumerate}
+    \item[\#6.] In how many ways can ten adults and seven children be seated at a circular table if no two children are to sit together?
+    \vspace{4em}
+    
+    \item[\#7.] Sue is on a vacation near the seaside for a fifteen day period. She plans to go fishing (F) for five days, go crabbing (C) for four days, go lobstering (L) for three days and go oystering (O) for another three days. For example, FFCLCLOFCOFFCLO is on possible schedule for fifteen days. How many different schedules are there like this for Sue to choose from?
+    \vspace{4em}
+    
+    \item[\#8.] How many cards hands of seven cards contain three cards of one suit, three cards of another suit, and one card of a third suit?
+    \vspace{4em}
+    
+    \item[\#9.] How many cards hands of seven cards contain at most one king and at least one ace?
+    \vspace{4em}
+    
+    \item[\#10.] Find the coefficient of $x^{4} y^{3} z^{5}$ in the expansion of $(x + 3y -2z)^{12}$
+    \vspace{4em}
+    
+    \item[\#11.] Find the number of integer solutions there are to the equation $$x_{1} + x_{2} + x_{3} + x_{4} = 15 $$
+    subject to : 
+    
+    a. $x_{1} = 2, \; 3\leq x_{2}, \; 1\leq x_{3}, \; 0\leq x_{4}$
+
+\end{enumerate}
+}
+\newpage{}
+{
+
+\begin{enumerate}
+    \item[\#12.] Find the number of integer solution there are to the equation : $\dots x_{1} + x_{2} + x_{3} + x_{4}  = 15$
+    
+    subject to :
+    
+    b. $0 \leq x_{1} \leq 3 \; ,\;   0 \leq x_{2} \leq 5\; ,\;  2 \leq x_{3} \leq 6 \;,\; 0 \leq x_{4}\;$.
+    \vspace{25em}
+    
+    \item[\#13.]
+    Solve the recurrence relation $a_{n} = a_{n-1} + 6a_{n-2}$ subject to: $a_{0} = 4$ and $a_{1} = 7$.
+    
+
+\end{enumerate}
+}
+
+
+\end{document}

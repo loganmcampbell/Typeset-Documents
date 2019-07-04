@@ -1,0 +1,190 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{CSCE 4133}
+\newcommand\hwnumber{}                  % <-- homework number
+\newcommand\NetIDa{Logan Campbell}           % <-- NetID of person #1
+\newcommand\NetIDb{010 - 641 - 227}           % <-- NetID of person #2 (Comment this line out for problem sets)
+
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+
+{
+
+\begin{enumerate}
+    \item[\#1.] Complete the Truth tables for $\bar{p} \rightarrow{}q, \;\; p \vee q \;$ and $(p \wedge q) \rightarrow{} \bar{r}$
+    
+    
+\begin{table}[h!]
+    \label{tab:table1}
+    \begin{tabular}{l|c|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      %\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+      $p$ & $q$ & $\bar{p} \rightarrow{q}$ \\
+      \hline
+      T & T & \\
+      T & F & \\
+      T & T & \\
+      T & F & \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \label{tab:table2}
+    \begin{tabular}{l|c|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      %\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+      $p$ & $q$ & $p \vee q$ \\
+      \hline
+      T & T & \\
+      T & F & \\
+      T & T & \\
+      T & F & \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \label{tab:table3}
+    \begin{tabular}{l|c|c|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      %\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+      $p$ & $q$ & $r$ & $(p \wedge q) \rightarrow{\bar{r}}$ \\
+      \hline
+      T & T & T\\
+      T & T & F\\
+      T & F & T\\
+      T & F & F\\
+      F & T & T\\
+      F & T & F\\
+      F & F & T\\
+      F & F & F\\
+    \end{tabular}
+\end{table}
+
+\begin{flushleft}
+Are $\bar{p} \rightarrow{q} \text{ and } p \wedge q \text{ logically equivalent?}$
+\end{flushleft}
+
+\vspace{4em}
+\item[\#2.] Show that if $3x^{2} - 6x > 0 \text{ , then } x \neq 2. $ Prove by a contrapositive :
+\vspace{4em}
+\item[\#3.] Write each of the following in mathematical notation and determine whether it is \underline{true} or \underline{false}.
+\vspace{1em}
+
+a. for every $x$ $(\text{in }\mathbb{R})$ there exists $y$ $(\text{in }\mathbb{R})$ such that $x \cdot y \geq 0$
+\vspace{4em}
+
+b. there exists $x$ $(\text{in }\mathbb{R})$ and $y$ $(\text{in }\mathbb{R})$ such that $x^{2} + y^{2} < 2xy$
+\vspace{4em}
+
+
+
+\end{enumerate}
+}
+
+
+
+
+
+\newpage{}
+{
+
+\begin{enumerate}
+	\item[\#4.] Using DeMorgan's Laws for logic, write \textbf{negation} for the following statement in English:
+	\begin{center}
+	    $\forall \: x \: \exists \: y, x^{2} \cdot y > 0 $
+	\end{center}
+\vspace{4em}
+
+\item[\#5.] Write the \textbf{converse} of \textbf{A} and the \textbf{contrapostive} of \textbf{B}.
+
+\textbf{A.} If you can run and jump, then you can walk.
+\vspace{3em}
+
+\textbf{B.} If $x^{2} - 1 = 0$, then $x = -1 \text{ or } x = 1.$
+\vspace{3em}
+
+\item[\#6.] Use the euclidean algorithm to determine \textit{gcd}(456,221). If 456 and 221 are \textit{relatively prime}, then work back through the euclidean algorithm to find integers \textit{k} and \textit{l} . such that \textit{k} 456 +\textit{l}221 = 1.
+\vspace{4em}
+
+\item[\#7.] Define $ f : \mathbb{R} \rightarrow{\mathbb{R}}$ by $f(x) = \frac{1}{1+x^{2}}$. Let \textit{A} = \{3,4\} and let \textit{B} = \{1,$\frac{1}{2}$,$\frac{1}{5}$\}. Determine the image of \textit{A} under $f$ ($f(\textit{A})$) and the pre-image of \textit{B} under $f$ ($f^{-1}(\textit{B})$).
+\vspace{2em}
+
+A. $f(\textit{A})$ =
+\vspace{1em}
+
+B. $f^{-1}(\textit{B})$ = 
+\vspace{4em}
+
+\item[\#8.] Prove by \textbf{induction} that : $$\sum_{k =1}^{n} k^{3} = \Big[ \frac{n(n+1)^{2}}{2} \Big] ^{2}$$
+
+
+
+\end{enumerate}
+}
+
+\newpage{}
+{
+
+\begin{enumerate}
+	\item[\#9.] Classify the following relations on $X = \{ 1, 2, 3 \}$ by placing next to each the appropriate letters:
+	\begin{center}(r) reflexive  (s) symmetric  (a) anti-symmetric  (t) transitive  (e) equivalence relation  (p) partial order  (o) total order
+	\end{center}
+\vspace{.5em}
+
+a. $R_{1} = \{ (1,1) , (2,2) , (3,3) \}$
+
+b. $R_{2} = \{ (1,2) , (2,3) , (1,3), (3,1) \}$
+
+c. $R_{3} = \{ (1,1) , (2,2) , (3,3), (1,2), (2,3), (1,3)\}$
+
+\item[\#10.] With $R_{2}$ and $R_{3}$ as given above (in problem 9), evaluate $R_{3} \circ R_{2}$.
+\vspace{4em}
+
+\item[\#11.] Prove by \textbf{induction} that $10\cdot11^{n} -3\cdot4^{n}$ is divisble by 7, for $n = 1, 2, 3, \dots$
+\vspace{17em}
+
+\item[\#12.] Define $R$ on $X \coloneqq \{1,2,3,\dots, 15\}$ by $(x,x^{\prime}) \in R$ if and only if 4 divides $(x^{\prime} - x)$. Prove that $R$ is an equivalence relation on $X$ and then determine the partition of $X$ generated by $R$.
+\end{enumerate}
+
+
+
+}
+\end{document}
