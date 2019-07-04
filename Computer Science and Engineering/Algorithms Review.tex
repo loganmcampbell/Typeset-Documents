@@ -1,0 +1,237 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{CSCE 4133}
+\newcommand\hwnumber{}                  % <-- homework number
+\newcommand\NetIDa{Logan Campbell}           % <-- NetID of person #1
+\newcommand\NetIDb{010 - 641 - 227}           % <-- NetID of person #2 (Comment this line out for problem sets)
+
+\pagestyle{fancyplain}
+\headheight 12pt
+\lhead{LOGAN CAMPBELL\\CSCE : 4133 [EXAM 1 NOTES]}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 2.0em
+\begin{document}
+
+{
+\lhead{ALGORITHMS SPRING 2019}
+\section*{Midterm Crash Course}
+\emph{Why is this class so damn hard?}
+\begin{enumerate}
+	\item[]This is going to be from Chapters 1 to 12.
+	\begin{center}
+    Chapter 2    : Getting Started \\
+    Insertion sort * Order of Growth * Rate of Growth
+    
+    Chapter 3   : Growth of Functions\\
+    Asymptotic notation * $\mathcal{O}$ - notation 
+    
+    Chapter 4   : Recurrences\\
+    Divide \& Conquer * Substitutions * Master Method * Recurrence Relations * Master's Theorem
+    
+    Chapter 6   : Heapsort\\
+    Heaps * Building Heaps * Max Heap 
+    
+    Chapter 7   : Quicksort\\
+    Partitioning * Analysis 
+    
+    Chapter 8   : Sorting in Linear Time\\
+    Counting Sort * Radix Sort * Bucket Sort
+    
+    Chapter 11  : Hash Tables\\
+    Insert * Delete * Search * Double Hash * Collisions * Linear/Quadratic Probing * Open Addressing
+    
+    Chapter 12  :   Binary Search Tree\\
+    Searching * Max * Min * Successor \& Predecessor * Insertion * Deletion
+    
+	\end{center}
+
+\end{enumerate}
+} % INDEX
+
+{
+\newpage{}
+\lhead{Logan Campbell \\ Chapter 3 : [Growth of Functions]}
+\section*{Time Complexity Analysis}
+\emph{Asymptotic Notations \& Algorithm Efficiency :}
+\begin{enumerate}
+	\item[]
+	\begin {center}Order of Common Functions\end{center}
+    \vspace{.8em}
+    {
+            Runtime $(1)$ = constant\\
+            Runtime $(\log\log n)$ = double logarithmic\\
+            Runtime $(\log n)$ = logarithmic \\
+            Runtime $(n^{\frac{1}{x}})$ or $ (n^{0.x\dotsc)} $ = fractional\\
+            Runtime $(n)$ = linear\\
+            Runtime $(n \log^{*} n)$ = n log-star n \\
+            Runtime $(n\log n)$ or $\log n!$ = linearithmic\\
+            Runtime $(n^{2})$ = quadratic\\
+            Runtime $(n^{x})$ = polynomial\\
+            Runtime $(x^{n})$ = exponential\\
+            Runtime $(n!)$ = factorial \\
+    }
+    \begin{center}\underline{To determine runtimes you must have to declare several things}\end{center}
+    \#1. Different steps within an algorithm can be added together such as n + k. 
+    
+    \#2. Drop constants. 
+    
+    \#3. Different inputs then different variables.
+    
+    \#4. Drop non dominate terms
+    \vspace{1.0em}
+    
+    %{Here's my favorite Big O analogy: Let's say you're making dinner for your family. O is the process of following a recipe, and n is the number of times you follow a recipe. O - you make one dish that everyone eats whether they like it or not. You follow one recipe from top to bottom, then serve (1 recipe). <-- How I grew up O(n) - you make individual dishes for each person. You follow a recipe from top to bottom for each person in your family (recipe times the number of people in your family). O(n^2) - you make individual dishes redundantly for every person. You follow all recipes for each person in your family (recipe times the number of people squared). O(log n) - you break people into groups according to what they want and make larger portions. You make one dish for each group (recipe times request).%
+    % $$\lim_{n \to \infty} \frac{T(n)}{f(n)} = 0  \xrightarrow{}$$ 
+    % $$\lim_{n \to \infty} \frac{T(n)}{f(n)} = c > 0 $$
+    % $$\lim_{n \to \infty} \frac{T(n)}{f(n)} = \infty $$
+
+    
+	
+\end{enumerate}
+} % CHAPTER 2
+
+{
+\newpage{}
+
+\lhead{Logan Campbell \\ Chapter 4 : [Recurrences]}
+\section*{Master's Theorem}
+\emph{What is Master's Theorem?!}
+\begin{enumerate}
+	\item[]
+	\begin{center}
+	\underline{Master's Theorem} : allows us to compute the asymptotic running time for divide and conquer algorithms. This generally divides each problem into ${a}$ sub problems where each sub problem is ${b}$ times smaller than the original problem.
+	\end{center}
+	
+	Furthermore, there are two terms of the master theorem that showcase the divide and conquer step.
+	$$\text{Divide	: } a \ T \ (\frac{n}{b})$$
+	$$\text{and}$$
+	$$\text{Conquer	: } f \ (n) $$
+	
+	{The whole concept of doing the master's theorem is to see which term will \textbf{win} :}
+	
+	\vspace{1em}
+
+	%\begin{align}
+	\text{first case :}\qquad $ a \ f (\frac{n}{b}) \ > \ c \ f(n) \ $ \text{	where division step wins.}
+
+	\text{second case :}\qquad $ c \ f(n) \ > \ a \ f (\frac{n}{b}) \ $	\text{	where conquer step wins.}
+	
+	\text{third case :}\qquad $ a \ f (\frac{n}{b}) \ \approx \ c \ f(n) \ $ \text{where both steps are evenly matched thus} $\log_{b}a$
+	%\end{align}
+	
+	\vspace{2em}
+	
+    simple terms :
+    
+        \quad $\mathcal{O}(n^{d})$ : \qquad where \quad $a < b^{d}$
+        
+	    \quad $\mathcal{O}(n^{d}\log n)$ : \qquad where \quad $a = b^{d}$
+	    
+	    \quad $\mathcal{O}(n \log^{b}_{a}) $ : \qquad where \quad $a > b^{d}$
+\end{enumerate}
+} % CHAPTER 4
+
+{
+\newpage{}
+\lhead{Logan Campbell \\ Sorting Things Covers Chapters : 6, 7, and 8}
+\section*{Sorting Algorithms}
+\emph{What are the run-times and your basic explanation}
+\begin{enumerate}
+	\item[]
+	\begin{center}
+		\underline{\underline{Insertion | Merge | Bubble | Heap | Quick | Counting | Radix | Bucket}}
+	\end{center}
+
+\begin{center}
+	\vspace{2em}
+	\renewcommand{\arraystretch}{1.7}
+	\setlength{\tabcolsep}{20pt}
+	\begin{tabular}{|c| |c| |c| |c|}
+		\hline
+		Algorithm	&	Worst	&	Average	&	Best 	\\[0.5ex] 
+		\hline \hline
+		Insert		&	$\mathcal{O}(n^{2})$		&	$\Theta(n^{2})$			&	$\Omega(n)$		        \\[0.5ex] 
+		\hline
+		Merge		&	$\mathcal{O}(n\log n)$		&	$\Theta(n\log n)$  		&   $\Omega(n\log n)$		\\[0.5ex] 
+		\hline	
+		Bubble		&   $\mathcal{O}(n^{2})$ 		&   $\Theta(n^{2})$			&	$\Omega(n)$		        \\[0.5ex] 
+		\hline
+		Heap		&	$\mathcal{O}(n \log n)$ 	&   $\Theta(n\log n)$       &   $\Omega(n\log n)$		\\[0.5ex] 
+		\hline
+		Quick		&	$\mathcal{O}(n^{2})$		&   $\Theta(n\log n)$	    &   $\Omega(n\log n)$		\\[0.5ex] 
+		\hline
+		Count		&	$\mathcal{O}(n+k)$			&   $\Theta(n +k)$		    &   $\Omega(n + k)$			\\[0.5ex] 
+		\hline
+		Radix		&	$\mathcal{O}(nk)$			&   $\Theta(nk)$			&   $\Omega(nk)$			\\[0.5ex] 
+		\hline
+		Bucket		&	$\mathcal{O}(n^{2})$		&   $\Theta(n+k)$		    &   $\Omega(n+k)$			\\[0.5ex] 
+		\hline
+	\end{tabular}
+\end{center}	
+	
+	\section*{\textit{Explain Like I'm Five Representation:}}
+	
+	\textbf{Insertion sort} is like a sorting cards in a hand. Pulling a card out and placing it in order from another card.
+	
+	\textbf{Merge sort} is like having several random groups of a collection of objects (unsorted) and then sorting each sub group to form the massive sorted group together. think of of water droplets coming together but each droplet has to be sorted before combining to the massive droplet. 
+	
+	\textbf{Heap sort} understand \textit{max-heap} where it basically is a binary tree, where the parent is always bigger than the two children it has. Once each parent of the tree is heaped, you can then think of each node switching around to order each number within the sub tree it's in from the root tree and parent tree.
+	
+	\textbf{Bubble sort} is switching every element adjacently within the structure until it is sorted.
+	
+	\textbf{Quick sort} is picking a pivot of a set of elements and controlling how things are going to be sorted from the pivot by partition (separating) the elements from $<$ and $>$ than the pivot. Process is repeated for the next separated elements getting to choose a new pivot. This repeats until sorted.
+	
+	\textbf{Count sort} is using a given range to allow input data to be counted from the index it lies in to then being able to count the sum of frequency and distribute the numbers in order.
+	
+	\textbf{Radix sort}  uses the least significant digit to sort the numbers which are given from a range (0 to n).
+	
+	\textbf{Bucket sort} distirbutes the elements into buckets and then sorts from there and then buckets the sorted bucket of elements.
+	
+\end{enumerate}
+} % CHAPTER 2/6/7/8
+
+{
+
+} % CHAPTER 11
+
+{
+
+} % CHAPTER 12
+
+\end{document}
