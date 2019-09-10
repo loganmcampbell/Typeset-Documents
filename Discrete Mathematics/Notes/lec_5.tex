@@ -1,0 +1,98 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}%
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL \\ Discrete Mathematics : Lecture Notes (9/6/2019)}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+
+{
+
+\begin{enumerate}
+    \item[]
+    Practice Problems : 1.6 \quad \{1 - 65 \} \\
+    \/\/ Quiz today...
+    \begin{center}
+                
+                \underline{DeMorgan's Laws} \vspace{.5em}
+                
+                Let $P$ be a propositional function on a set $S$.
+    \end{center}
+    \vspace{1.0em}
+    \item $\overline{ \forall x ( \text{in } S ) , P(x)}$ $\equiv$ $\exists x (\text{in } S), \overline{P(x)}$
+    \item $\overline{ \exists x, P(x) }$ $\equiv$ $\forall x, \overline{P(x)}$
+    \item $\overline{\forall x \forall y , P(x,y)} $ $\equiv$ $\exists x \exists y , \overline{P(x,y)}$
+    \item $\overline{\exists x \exists y, P(x,y)} \equiv \forall x \forall y \overline{P(x,y)}$
+    \item $\overline{\forall x \exists y , P(x,y)} \equiv \exists x, \forall y \overline{P(x,y)}$
+    \item $\overline{\exists x, \forall y P(x,y)} \equiv \forall x \exists y , \overline{P(x,y)}$
+    \end{enumerate}
+    \vspace{1.0em}
+    \hrule{}
+    \begin{enumerate}
+        \item[] Example: (of a nested sequence of quantifiers) A function $f : \mathbb{R} \rightarrow{\mathbb{R}} $ is continuous at a point $x$ in $\mathbb{R}$ provided that :
+        $$ \forall \ \epsilon \ > \ 0  \ \exists \ \delta  \ > \ 0 \text{ such that }  \ | f(x) - f(x_{0} | \ > \epsilon \text{ whenever } | x_{0} - x | \ < \ \delta $$
+        $$\ldots$$
+        \text{In other words, }
+        $$ \forall \ \epsilon \ > \ 0 \ \exists \ \delta \ > \ 0 , \ \ \forall \ x \ \text{with } \ |x - x_{0} | \ < \delta , \text{ we have } | f(x) - f(x_{0}) | \ < \ \epsilon.$$ 
+        \hfill \textit{convoluted af \\}
+        \text{The Negation: }
+        $$ \exists \ \epsilon \ > \ 0, \ \forall \ \delta \ > \ 0 \ \exists \ x \ | x - x_{0} | \ < \delta , \ | f(x) - f(x_{0}) |  \ \geq \ \epsilon. $$
+    \end{enumerate}
+    \hrule{}\hrule{}
+    
+    
+    
+    
+\newpage{}
+\begin{enumerate}
+    \item[]
+    \begin{center}
+                \underline{Nested Quantifiers} \vspace{.5em}
+    \end{center}
+    Let $S = \{ \text{ Aaron, Mark, Susan, Joe, Jim } \}$
+
+    \vspace{.4em}
+    \begin{table}[h!]
+    \centering
+        \begin{tabular}{c|c}
+            Aaron   &  6' 3'' \\
+            Mark    &  6' 0'' \\
+            Susan   &  5' 7'' \\
+            Joe     &  6' 2'' \\
+            Jim     &  5' 0'' \\
+        \end{tabular}
+    \end{table}
+    $$ T(x,y) : x \text{ is at least as TALL as } y $$
+    $$T() \text{ stands for the height}$$
+    \vspace{.5em}
+    \item[] Determine the Truth value of the following statements:
+    \item $\forall \ x  \ \forall y \ T(x,y) : x \ \text{ and } \ y \ \text{ in } S : \qquad$ FALSE \xmark
+    \item $\exists x \ \exists y \ T(x,y) :  \qquad$ TRUE \checkmark
+    \item $\forall x \ \exists y \ T(x,y) : \qquad $ TRUE \checkmark
+    \item $\exists x , \forall y  \ T(x,y) : \qquad$ TRUE \checkmark 
+    
+\end{enumerate}
+
+}
+
+\end{document}

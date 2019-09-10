@@ -1,0 +1,113 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}%
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL \\ Discrete Mathematics : Lecture Notes (9/9/2019)}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+
+{
+Continuing DeMorgan's Laws $\ldots$
+\begin{enumerate}
+    \item[]
+    Example: Express the following using DeMorgan's Laws:
+    $$ \overline{\forall x \ \exists y \ (\in \mathbb{R}), \ x^{2} \cdot y > 0}. $$
+    $$\equiv$$
+    $$\exists x , \forall y (\in \mathbb{R}), x^{2} \cdot y \leq 0$$
+    
+    \par In English,
+    \begin{center}
+            \par There exists a $x$ such that for all $y$ in the function $x^{2} \cdot y $ is less than or equal to $zero$.
+     Which is a true statement \checkmark
+    \end{center}
+\end{enumerate}
+\hrule
+    
+    
+    
+\newpage{}
+\begin{enumerate}
+    \item[]
+    Section 2.1
+    \begin{center}
+                \underline{Methods of Proofs} \vspace{.5em}
+    \end{center}
+    
+    Direct Proof : \hfill Strategy of a Direct Proof is to assume $P$ and work to get to $Q$.
+    
+    
+    $\underset{1}{Example:}$ \quad If $x\not= 1$ and $x \in \mathbb{R}$ then : $$ 1 + x + x^{2} + \dotsc + x^{n}  \ = \ \frac{1-x^{n+1}}{1-x} \text{ for any } \mathbb{Z}^{+}$$
+
+    \underline{Proof} : Let $N$  be a $\mathbb{Z}^{+}$ then:
+        $$(1+x) (1+x+x^{2} \cdots + x^{n})$$
+        $$=$$
+        $$1 ( 1 + x+ x^{2} \cdots + x^{n})$$
+        $$-x(1+x+x^{2}+ \cdots x^{n})$$
+        $$(1+x+x^{2}+\cdots+x^{n})-(x+x^{2}+x^{3}+ \cdots + x^{n} + x^{n+1})$$
+        $$1 - x^{n+1}$$
+        
+        Corollary: If $-1 < x < 1$, then $$1 + x +x^{2}+x^{3} + \cdots = \frac{1}{1-x}$$
+        $$\lim_{n\to\infty} (1 + x + x^{2} + \cdots x^{n}) \rightarrow \sum^{\infty}_{n=0} x^{n} $$     
+\end{enumerate}
+\hrule
+
+\begin{enumerate}
+    \item [] Application of Proof
+    \vspace{1em}
+    
+    A ball is dropped from 10 feet and every time the ball falls it bounces back up half the previous height. How far has the ball travelled when it comes to rest?
+    
+    $$ 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} \cdots \cdots = 2 \ feet $$
+    
+    The ball falls: 
+    
+    $10 + 5 + 2\frac{1}{2} \cdots  \cdots \ \ \ 20 \ feet$
+    
+    $20 + 10 = 30 \ feet \checkmark$
+    
+\end{enumerate}
+
+\newpage{}
+\begin{enumerate}
+    \item[]
+    Section 2.1
+    \begin{center}
+                \underline{Methods of Proofs} \vspace{.5em}
+    \end{center}
+    
+    Indirect Proof : Assume that $p \rightarrow q$ is a false statement. What you are trying to prove is false and you're trying to reach a contradiction.
+    
+    \vspace{1em}
+    Theorem: There are infinitely man prime numbers ( a positive number that is divisible by one or itself.)
+    
+        \vspace{5em}
+    to be continued.....
+    $$ $$
+  
+\end{enumerate}
+
+
+
+}
+
+\end{document}

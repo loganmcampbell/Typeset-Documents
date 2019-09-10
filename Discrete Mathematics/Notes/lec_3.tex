@@ -1,0 +1,94 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}%
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL \\ Discrete Mathematics : Lecture Notes (8/30/2019)}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+
+{
+
+\begin{enumerate}
+    \item[]
+    \begin{center}
+            COMPOUNDED PROPOSITIONS . . . [continued]
+    \end{center}
+    \vspace{1.0em}
+    3. You may have my book when the cows come home.
+    
+    \qquad if: if the cows come home. \quad then: then you may have my book.
+    
+    4. In order to drive my car it is necessary to have fuel in it.
+    
+    \qquad if: if I can drive my car. \quad then: then I have fuel in it.
+    \vspace{1em}
+    \item[] Definition: Let $p$ and $q$ be propositions:
+    
+    1. The converse of $p \rightarrow q$ is \quad $q \rightarrow p$
+    
+    2. the contrapositive from $p \rightarrow q$ is $\bar{q} \rightarrow \bar{p}$
+    \vspace{1em}
+    
+    an example: $\overbracket{\text{it is raining on campus}}^{p}$ | $\underbrace{\text{it is cloudy over campus.}}_{q}$
+    
+    $q \rightarrow p$ : if it is cloudy on campus then it is raining on campus. 
+ 
+    $\bar{q} \rightarrow \bar{p}$ : if it is \underline{not} cloudy over campus then it is \underline{not} raining on campus.
+    
+    \item[] Theorem Let $p$ and $q$ be propositions.
+    
+    \quad 1. $(p \rightarrow q)$ $\not\equiv$ $(q \rightarrow p)$
+    
+    \quad 2. $(p \rightarrow q)$ $\equiv$ $\bar{q} \rightarrow \bar{p}$
+    
+    \begin{table}[h!]
+    \centering
+    \label{z} % random name
+    \begin{tabular}{|cc|c|c|c|} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      %\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+        \hline
+        p & q & ${p \rightarrow q}$ & $q \rightarrow p$ & $\bar{q} \rightarrow \bar{p}$ \\
+        \hline
+        T & T & T& T & T \\
+        T & F & F& T & F \\
+        F & T & T& F & T \\
+        F & F & T& T & T \\
+        \cline{1-5}
+          %&  &  &  &  & \\
+         \hline
+        \end{tabular}
+    \end{table}
+    
+    * notice they are not logically equivalent
+    
+    \hrulefill
+    \item[] Write A Contrapositive Mathematical Expression
+    
+    if $\underbrace{x \not= 3}_{p}$ then $ \underbrace{x < 3 \text{ or } x > 3}_{q} $
+    
+    the contrapositive is:
+    \quad if $x \geq 3 $ and $ x \leq 3$ then $x = 3$ \checkmark
+    
+
+\end{enumerate}
+}
+
+\end{document}

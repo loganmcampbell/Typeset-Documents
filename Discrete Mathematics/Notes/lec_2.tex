@@ -1,0 +1,182 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}%
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL \\ Discrete Mathematics : Lecture Notes (8/28/2019)}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+
+{
+
+\begin{enumerate}
+    \item[]
+    \begin{center}
+            COMPOUNDED PROPOSITIONS
+    \end{center}
+    \vspace{1.0em}
+    
+    Example: Let $p$, $q$, and $r$ be propositions where
+    
+    $$p \text{ is false}$$
+    $$q \text{ is true}$$
+    $$r \text{ is false}$$
+    
+    Determine the truth value for:
+    
+        \quad "start inside and go out"
+    \vspace{1em}
+    $$ \textcolor{blue}{( p \vee \bar{r} )} \wedge \overline{ \textcolor{green}{( q \vee r )} \vee \textcolor{red}{( \overline{r \vee p })}} $$
+    
+    \begin{center}
+        step 1 (blue) : p is false, r \{inverse\} is true : thus an `or' makes this statement \quad TRUE\\
+        step 2 (green) : q is true, r is false :an `or' makes this statement \quad TRUE\\
+        step 3 (red) : r is false, p is false : an `or' and an $\overline{overline}$ makes this statement : TRUE \\
+        step 4 (overline) (green and red) : inverses the two conditions.
+        $$\therefore$$ TRUE and $\overline{ \text{(TRUE OR TRUE)}}$ = TRUE AND FALSE $\rightarrow${ FALSE }\\
+        answer = FALSE \checkmark\\
+    \end{center}
+    \hrulefill
+    \begin{center}
+    Example 
+    \begin{table}[h!]
+    \caption*{Give the truth table of $(\overline{p \wedge q}) \vee (r \wedge \bar{p}$) where p, q, and r are propositions...}
+        \centering
+    \label{}
+    \begin{tabular}{c|c|c|c} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      %\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+      $p$ & $q$ & $r$ & $(\overline{p \wedge q}) \vee (r \wedge \bar{p}$)    \\
+      \hline
+    T & T & T & F \\
+    T & T & F & F \\
+    T & F & T & T \\
+    T & F & F & T \\
+    \hline
+    F & T & T & T \\
+    F & T & F & T \\
+    F & F & T & T \\
+    F & F & F & T \\
+    
+        \end{tabular}
+    \end{table}
+\end{center}
+\vspace{1em}
+\newpage{}
+Define: let P and Q be compound propositions each of which are made up of propositions $P_{1} \ldots\ldots P_{n}$ then P and Q are logically equivalent if they have identical truth tables...
+
+for each proposition $n$ can be created a table : n $\times$ $2^{n}$.
+    \begin{table}[h!]
+        \centering
+    \label{x} % random name
+    \begin{tabular}{c|c|c} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      %\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+      $P_{1} \ldots\ldots P_{n}$ & $P$ & $Q$ \\
+      \hline
+     $T \ldots\ldots T$ & T & T \\
+    $\vdots$ $\ddots$ $\vdots$ &$\vdots$ &$\vdots$  \\
+    $F \ldots \ldots F$ & F & F \\
+    
+        \end{tabular}
+    \end{table}
+$$\therefore P \equiv Q$$
+\hrulefill
+\vspace{1em}
+
+Theorem: Let $p$ and $q$ be propositions.
+
+\quad - some propositions are equivalent to other propositions such as these 2: 
+
+\quad \#1 : $(\overline{p \vee q}) \equiv \bar{p} \wedge \bar{q}$
+
+\quad \#2 : $(\overline{p \wedge q}) \equiv \bar{p} \vee \bar{q}$ 
+\vspace{1em}
+
+\textbf{``TEST QUESTION: IS THIS LOGICALLY EQUIVALENT?''}
+
+*Draw the Truth-table and compare!
+
+example:
+    \begin{table}[h!]
+        \centering
+    \label{z} % random name
+    \begin{tabular}{|c c|c|c|} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      %\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+        \hline
+        p & q & $\overline{p \vee q}$ & $\bar{p} \wedge \bar{q}$\\
+        \hline
+        T & T & F & F \\
+        T & F & F & F \\
+        F & T & F & F \\
+        F & F & T & T \\
+        \cline{1-4}
+          &  & \checkmark & \checkmark\\
+         \hline
+        \end{tabular}
+    \end{table}
+
+\end{enumerate}
+}
+
+\newpage
+{
+\begin{enumerate}
+    \item []
+     \begin{center}
+     Conditional Propositions
+     \end{center}
+    
+    Definition: Let $p$ and $q$ be propositions then the conditional proposition be : $p \rightarrow q$
+    is the statement: ``If $p$ then $q$'' Now in $p \rightarrow q$; $p$ is the hypothesis and $q$ is the conclusion. Truth-Table below
+    \begin{center} 
+    \begin{table}[h!]
+    \caption*{$p \rightarrow q$ }
+        \centering
+    \label{c}
+    \begin{tabular}{|c c | c|} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+      %\textbf{Value 1} & \textbf{Value 2} & \textbf{Value 3}\\
+      \hline
+      $p$ & $q$ &   $p \rightarrow q$  \\
+      \hline
+      T & T & T \\
+      T & F & F \\
+      F & T & T \\
+      F & F & T \\
+      \hline
+    
+        \end{tabular}
+    \end{table}
+\end{center}
+    
+    \item[] Be able to convert statements into `if - then' statements
+    
+    1. We will catch the bus if we run!
+    
+    \qquad if: if we run \quad then: then we will catch the bus.
+    
+    2. The cactus grows \underline{only if} it has enough sunlight.
+    
+    \qquad if: if the cactus grows \quad then: then it has enough sunlight.
+    
+    
+    
+\end{enumerate}
+}
+
+\end{document}
