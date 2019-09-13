@@ -1,0 +1,73 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}%
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL \\ Discrete Mathematics : Lecture Notes (9/13/2019)}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+{
+    2.4\quad Homework Due on the 9/20/2019: \quad \# 2,3,5,9,15,18,23,24
+    \vspace{2.0em}
+
+\begin{enumerate}
+    \item[] Q4: In order to prove that every room of Hilbert's Hotel is occupied, it sufficient to show:
+    \vspace{1em}
+    \par{\underline{Step 1}: Show that the base is true.
+    
+        * Show that if room (1) is occupied.
+    \par{\underline{Step 2}: Show that if room (n) is occupied for some generic n then $\underset{n+1}{\text{room}}$ is occupied
+        }
+        }
+    Example: Show that, for any positive integer n :
+    $$ \underset{1,2,3,4,\ldots n}{\sum^{n}_{k=1}} = \frac{n(n+1)}{2} $$
+    You need to establish:
+
+       $$        S(1) \ = \sum_{k=1}^{1} k = \frac{1(2)}{2} = 1     $$
+\begin{center}\rule{8cm}{0.4pt}\end{center}
+    $$ S(2) = \sum^{2}_{k=1} k = \frac{2(3)}{2} = 3 $$
+\begin{center}\rule{8cm}{0.4pt}\end{center}
+    $$ S(3) = \sum^{3}_{k=1} k = \frac{3(4)}{2} = 6 $$
+    
+Show if some S(n) is True: Then S(n+1) is True.
+$$S(n) = \sum^{n}_{k=1} k = \frac{n(n+1)}{2} $$
+\begin{center}\rule{8cm}{0.4pt}\end{center}
+$$S(n+1) = \sum^{n+1}_{k=1} = \frac{(n+1)(n+2)}{2} \quad \text{ if s(n) is true then s(n+1) is true as well..}$$
+    
+\end{enumerate}
+
+\newpage
+\underline{Proof By Induction} :
+\begin{enumerate}
+    \item [] Step 1: establish smallest number (your basis).
+        $$S(0) \quad \quad S(1)$$
+    \item[] Step 2: Show that if room n is occupied (generic n) then room n+1 is occupied as well.
+        $$S(n) = \underbracket{\sum^{n}_{k=1}}_{1+2+3+4+\ldots n + (n+1)} k = \frac{n(n+1)}{2}$$
+    \item[] let's add [n+1] on both sides to get :
+    $$ \left( \ \sum^{n}_{k=1} k  \ \right)  + (n+1) = \frac{n (n+1)}{2} + (n+1)$$
+    So, $$ \sum^{n+1}_{k=1} k = n(n+1)+2(n+1) $$
+    $$\therefore$$
+    the goal is establish \checkmark
+    
+\end{enumerate}
+    
+}
+\end{document}
