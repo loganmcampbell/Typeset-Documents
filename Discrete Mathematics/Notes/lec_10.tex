@@ -1,0 +1,134 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}%
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL \\ Discrete Mathematics : Lecture Notes (9/18/2019)}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+{
+\begin{enumerate}
+\item[]
+    Example 1: use induction to show that $2^{n} \geq n^{2} \ \text{for} \ n = 4, 5, 6, 7, \ldots$
+    
+    
+    step 1: 
+    
+    \qquad LHS $$S(4) = 2^{4} = 2^{4} = 16$$
+    \qquad RHS $$S(4) = 4^{2} = 16 \qquad \checkmark \ S(4) \text{ holds...}$$
+            
+    step 2: Assume that S(n) holds for some generic $n\geq 4$. That is $\underbracket{2^{n} \leq n^{2}}_{S(n)}$
+    multiplying both sides of S(n) by $2$ we get : 
+    $$2 \cdot 2^{2} \geq n^{2} \cdot 2 $$
+    Hence,
+        $2^{n+1} \geq 2n^{2} = n^{2} + n^{2} $\\
+        $= n^{2} \cdot n \cdot n$\\
+        $= n^{2} \cdot 4n$\\
+        $= n^{2} +2n + 2n \geq n^{2} + 2n + 1$
+        
+        \begin{center}
+            OR
+        \end{center}
+    Show that: $2^{n+1} \geq (n+1)^{2} = n^{2} + 2n + 1$\\
+    Lets add $2n+1$ on both sides of S(n) : $$2^{n}  \ \boxed{+ 2n+1} \ \geq n^{2} \ \boxed{+2n+1}.\quad \text{so, } 2^{n}(2n+1) \geq (n+1)^{2}$$
+    Now, by problem 16, $2^{n} \geq 2(n+1) \text{ for } n \geq 3$.
+    $$2^{1} \cdot 2^{n} = 2^{n+1} $$
+    $2^{n} + 2^{n} \geq 2^{n} + (2n+1) \geq (n+1)^{2}.$
+    
+    
+\end{enumerate}
+
+\newpage{}
+\begin{enumerate}
+    \item [] Definition: Let $m$ and $n$ be integers. We say that $m$ divides $n$ if there is a integer $k$ such that: $n = mk$. In this case, we say that $n$ is divisible by $m$.
+    
+    \item[] Example: Show that $7^{n-1}$ is divisible by $6$. for $n=1,2,3, \ldots$
+    
+    step 1: $n=1 \rightarrow \quad s(1) = 7^{1} - 1$ is divisible by $6$.  
+    $$7 - 1 = 6 \div 6 = 1 $$ \checkmark.
+    
+    step 2: Assume S(n) hold true for some generic integer n.
+    $$S(n) = 7^{n} - 1$$ is divisible by 6 for some generic n. Hence there is an integer $k$ that :
+    $$7^{n} - 1 = 6k$$
+    Now: $7^{n+1} - 1 = 7 \underbracket{(7^{n} - 1)}_{6k} + 6$
+    $$7^{n+1} - 1 = 7(6k) + 6$$
+    $$\underbracket{6(7k+1)}_{\ell}$$
+    Where:
+    $6\ell$ and $\ell$ are integers.
+    \vspace{1em}
+    \hrule 
+    \item[] Alternative way: $ 7^{n+1} - 1 = 7\cdot 7^{n} - 1 = (6k +1) =1$
+    $$ = 7(6k + 1) -1 $$
+    $$ = 7\cdot6k + 7 - 1$$
+    $$ = 7\cdot6k + 6$$
+    $$ = 6\underbracket{(7k +1)}_{7k+1 = \ell}$$ 
+\end{enumerate}{}
+
+}
+
+\newpage{}
+\begin{enumerate}
+    \item [] Another Example: \\
+    \quad Show that $3^{n} + 7^{n} - 2$ is divisible by 8, for $n = 1,2,3, \ldots$
+    
+    step 1: $S(1) = 3^{1} + 7^{1} - 2 = 8$, which is divisible by $8$.
+    
+    step 2: $S(n)$ Assume $S(n)$ holds true for some generic integer n.
+    $$S(n) = 3^{n} + 7^{n} - 2 = 8k$$ where some integer is k.
+    step 3: Assume $S(n+1)$ holds true for the next term.
+    $$S(n+1) = 3^{1} \cdot 3^{n} + 7^{1} \cdot 7^{n} - 2 = 8 \ell$$
+    for some integer $\ell$.
+    
+    Now: $3^{n+1} + 7^{n+1} - 2$ = $3\cdot 3^{n} + 7 \cdot 7^{n} - 2$.
+    
+    $$3 \cdot 3^{n} + (3+4) \cdot 7^{n} - 2$$
+    $$3\cdot 3^{n} + 3 \cdot (7^{n}) + 4(7^{n}) - 2$$
+    $$3 \cdot 3^{n} + 3 \cdot 7^{n} - 3 \cdot 2 + 4 \cdot 7^{n} - 2 + 6 $$
+    $$3 (3^{n} + 7^{n} - 2) + 4 \cdot 7^{n} +  4$$
+    $$= 3 (8k) + 4(7^{n} + 1)$$
+    Now: $7^{n}$ is odd for any positive integer $n$. $\therefore 7^{n} + 1$ is even for any $n$. 
+    $7^{n} + 1 = 2m$ where $m$ is an integer.
+    
+    So: $$3^{n+1} +7^{n+1} - 2 = 3(8k) + 4(2m)$$
+    $$= 8(3k) + 8m$$
+    $$=8 \underbracket{(3k+m)}_{\text{some integer } \ell}$$
+    
+    So: $3^{n+1} + 7^{n+1} - 2$ is divisible by 8. \checkmark.
+    
+    \vspace{1em}
+    \hrule 
+    
+    \item[] Alternative way:
+    
+    $3^{n+1} + 7^{n+1} - 2 = \boxed{3^{n} + 7^{n} - 2 = 8k }$
+    $$3^{n+1} + 7^{n+1} - 2 = 3(3^{n} - 7^{n} - 2)$$
+    $$\boxed{ + 4\cdot 7^{n} + 8}$$
+    $$3^{n+1} + 7^{n+1} - 2 = 3 (3^{n} + 7^{n} - 2) + 4 \cdot 7^{n} + 4$$
+    $$= 3(8k) + 4(7^{n} + 1)$$
+    
+    
+\end{enumerate}{}
+
+
+
+
+
+\end{document}
