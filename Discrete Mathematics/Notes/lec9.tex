@@ -1,0 +1,75 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}%
+\pagestyle{fancyplain}
+\headheight 25pt
+\lhead{LOGAN CAMPBELL \\ Discrete Mathematics : Lecture Notes (9/16/2019)}
+\chead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.0em
+\begin{document}
+{
+\begin{enumerate}
+\item[]
+    Example 1: use induction to show that $\sum \limits_{k = 1}^{n} k^{2} = \frac{n(n+1)(2n+1)}{6}$\\
+    step 1 : establish S(smallest number): $$\therefore S(1) \quad //Basis \ Case$$
+    $$S(1) = \sum \limits_{k=1}^{1} = 1 = 1(1+1)(2(1) +1) = 1(2)(3) = \frac{6}{6} = 1 \quad \checkmark.$$
+
+    step 2 : Assume $S(n)$ hold for some generic (n).
+    $$S(n) = 1^{2} + 2^{2} \cdots + n^{2} \rightarrow \sum^{n}_{k=1} k^{2} = \frac{n(n+1)(2n+1)}{6}$$
+    \begin{center}
+        \boxed{$$+(n+1)$$} You would have to add this to establish that the goal is the additional {$$+(n+1)$$}
+    \end{center}
+    Furthermore:
+    $$ S(n)= \underbracket{\sum^{n}_{k=1} k^{2}}_{\boxed{+ (n+1)^{2}}} = \underbracket{\frac{n(n+1)(2n+1)}{6}}_{\boxed{+ (n+1)^{2}}}$$
+    
+    $$\sum^{n+1}_{k=1} k^{2} = \frac{n(n+1)(2n+1)}{6} + (n+1)^{2} $$
+    \underline{Factor}: 
+    $$ = \frac{n(n+1)(2n+1)+6(n+1)^{2}}{(6)} $$
+    
+    $$ = \frac{(n+1) \left[ n(2n+1) + 6(n+1) \right]}{6}$$
+    
+    $$ = \frac{ (n+1)\left[ 2n^{2} + 7n + 6 \right]}{6}$$
+    
+    $$ = \frac{ (n+1)(n+2)(2n+3) } {6} $$
+    
+    step 3 : establish $S(n+1)$: $$ \sum^{n+1}_{k=1} k^{2} = \ \frac{(n+1)(n+2)(2n+3)}{6}$$
+\end{enumerate}
+
+\newpage{}
+\begin{enumerate}
+    \item [] Example 2: Use induction to show that $$ \underbracket{ \sum \limits^{n}_{k=1}}_{n = 1\cdots \infty} k^{3} \ = \left [ \frac{n(n+1)}{2} \right] ^ {2}$$
+    
+    
+    step 1: establish S(1) is $$ \sum \limits^{1}_{k=1} 1^{3} = 1 = 1(1+1) = \frac{2}{2} = {1}^{2} = 1 \checkmark$$
+    
+    step 2: establish s(n) for some generic integer n $$S(n) = \sum \limits^{n}_{k=1} k^{3} = \bigg[ \frac{(n+1)(n+1)}{2}  \bigg] ^{2}$$
+    
+    step 3: establish s(n+1)
+    
+    $$S(n+1) = \sum \limits^{n}_{k=1} k^{3} = \bigg[ \frac{(n+1)(n+1+1)}{2}  \bigg] ^{2} \rightarrow$$
+    $$ (1),(2),(3), \ldots (4) \ldots + n \ldots + (n+1) =$$
+    $$(1)^{3} + (2)^{3} + (3)^{3} \ldots (n)^{3} + \underbracket{+ (n+1)^{3}}_{\text{ new integer term..}} = \Bigg[ \frac{n(n+1)}{2} \Bigg]^{2} + \ldots \underbracket{+ (n+1)^{3}}_{\text{ new integer term..}}$$
+    $$ \frac{n^{2}(n+1)^{2}}{4} + \frac{4(n+1)(n+1)^{2}}{4}$$
+    
+    thus is true \checkmark
+\end{enumerate}{}
+
+}
+\end{document}
